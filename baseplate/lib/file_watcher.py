@@ -95,6 +95,9 @@ class FileWatcher(Generic[T]):
     :param backoff: retry backoff time for the file watcher. Defaults to
         None, which is mapped to DEFAULT_FILEWATCHER_BACKOFF.
 
+    :raises WatchedFileNotAvailableError: when `timeout` is specified if the file is
+     not available or cannot be parsed.
+
     """
 
     def __init__(
